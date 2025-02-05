@@ -78,12 +78,11 @@ To run the application, you need to install and run `npm` on both the **main ser
    ```
 8. The app is ready! You can start testing it at:
    ```
-   http://localhost:8081/
-
+   http://localhost:3000/
 
 ## Tests
 
-The backend service includes three API tests that can be executed using the following command:
+The backend service includes three test files to validate the core functionalities of the application. You can run them using the following command:
 
 1. Navigate to the **backend** folder:
    ```sh
@@ -94,4 +93,20 @@ The backend service includes three API tests that can be executed using the foll
    npm test
    ```
 
-This will execute the predefined API tests and validate the core functionalities of the application.
+### API Tests (`test.api.js`)
+These tests check the API endpoints:
+- **Get Short URL:** Ensures that a shortened URL redirects correctly (expects HTTP 302).
+- **Invalid Short URL:** Ensures that a non-existing short URL returns a 404 error.
+- **Invalid URL:** Ensures that an improperly formatted URL is rejected (expects HTTP 400).
+- **Create URL:** Tests if a valid URL can be shortened successfully (expects HTTP 201).
+- **URL Already Exists:** Ensures duplicate URLs return a status code of 208.
+
+### Database Connection Test (`mongo.test.js`)
+This test ensures that the application can connect to MongoDB successfully.
+- **MongoDB Connection:** Checks if the database connection is established (expects a valid state).
+
+### Service Logic Tests (`service.test.js`)
+These tests validate internal functions:
+- **isUrl:** Checks if the function correctly identifies valid URLs.
+- **isNotUrl:** Ensures invalid URLs are detected properly.
+- **Generate Id:** Validates that the generated IDs have the correct length (expects 6 characters).
