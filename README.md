@@ -48,9 +48,9 @@ To run the application, you need to install and run `npm` on both the **main ser
    ```sh
    git clone <repository_url>
    ```
-2. Navigate to the **backend** folder:
+2. Navigate to the **frontend** folder:
    ```sh
-   cd URL-shortening-service-main
+   cd URL-shortening-frontend-main
    ```
 3. Create a `.env` file with the following content:
    ```ini
@@ -61,9 +61,9 @@ To run the application, you need to install and run `npm` on both the **main ser
    npm install
    npm run
    ```
-5. Navigate to the **frontend** folder:
+5. Navigate to the **backend** folder:
    ```sh
-   cd URL-shortening-frontend-main
+   cd URL-shortening-service-main
    ```
 6. Create a `.env` file with the following content:
    ```ini
@@ -76,7 +76,22 @@ To run the application, you need to install and run `npm` on both the **main ser
    npm install
    npm run
    ```
-
 8. The app is ready! You can start testing it at:
    ```
    http://localhost:8081/
+
+
+## Tests
+
+The backend service includes three API tests that can be executed using the following command:
+
+1. Navigate to the **backend** folder:
+   ```sh
+   cd URL-shortening-service-main
+   ```
+2. Run the tests:
+   ```sh
+   npm test
+   ```
+
+This will execute the predefined API tests and validate the core functionalities of the application.
